@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-decoration">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <main class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">My Tasks</h1>
+      <p class="subtitle" id="summary">0 tasks</p>
+    </header>
+
+    <!-- Input -->
+    <div class="input-wrap">
+      <input
+        type="text"
+        id="taskInput"
+        class="task-input"
+        placeholder="Add a new task..."
+        maxlength="100"
+        autocomplete="off"
+      >
+      <button id="addBtn" class="add-btn" aria-label="Add task">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Done</button>
+    </div>
+
+    <!-- Task list -->
+    <ul class="task-list" id="taskList">
+      <!-- tasks injected by JS -->
+    </ul>
+
+    <!-- Empty state -->
+    <div class="empty" id="emptyState">
+      <div class="empty-icon">✦</div>
+      <p>No tasks here.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="app-footer">
+      <span id="remainCount">0 remaining</span>
+      <button id="clearDoneBtn" class="clear-btn">Clear completed</button>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
